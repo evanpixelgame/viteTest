@@ -1,7 +1,6 @@
 // src/App.js
 import React, { useState } from 'react';
 import './App.css';
-//import PhaserGame from './PhaserGame';
 import Login from './Login';
 
 function App() {
@@ -14,9 +13,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>My Phaser and React Game</h1>
+        <h1>React Login Demo</h1>
         {user ? (
-          <PhaserGame user={user} />
+          <div>
+            <h2>Welcome, {user.username}!</h2>
+            <p>You are now logged in.</p>
+          </div>
         ) : (
           <Login onLoginSuccess={handleLoginSuccess} />
         )}

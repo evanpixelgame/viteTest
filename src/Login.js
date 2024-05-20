@@ -1,21 +1,18 @@
 // src/Login.js
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('https://your-auth-endpoint.com/login', {
-        username,
-        password,
-      });
-      onLoginSuccess(response.data);
-    } catch (err) {
+
+    // Simulate a login process
+    if (username === 'user' && password === 'password') {
+      onLoginSuccess({ username });
+    } else {
       setError('Invalid credentials');
     }
   };
